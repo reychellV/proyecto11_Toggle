@@ -1,0 +1,70 @@
+/*ESTILOS GENERALES*/
+*{
+    margin: 0; /*Separacion interna en 0*/
+    padding: 0; /*Separacion externa en 0*/
+    box-sizing: border-box; /*Tamaño del elemento en forma de caja*/
+}
+
+/*ESTILOS DEL BODY*/
+body{
+    background-color: rgb(35, 34, 34); /*Color del fondo*/
+    display: flex; /*Elementos juntos uno al lado del otro*/
+    justify-content: center; /*Alinear items al centro de manera horizontal*/
+    align-items: center; /*Alinear items al centro de manera vertical*/
+    flex-direction: column; /*Agrupacion de forma de lista*/
+    min-height: 100vh; /*Minimo de alto en 100% en la altura*/
+    transition: 0.5s; /*Una transición de cambio de 0.5 segundos*/
+    /*ESTILOS PARA CUANDO CAMBIE*/
+    &.toggleBlanco{
+        background-color: aliceblue;
+    }
+}
+
+
+
+/*ESTLOS PARA EL BOTON*/
+#toggle{
+    height: 160px; /*Altura*/
+    width: 320px; /*Ancho*/
+    background: #1b1b1b; /*Color de fondo*/
+    box-shadow: inset 0 8px 60px rgb(0, 0, 0, 0.1), /*Sombra en el elemento */
+                inset 0 8px 8px rgb(0, 0, 0, 0.1), /*Multiples sombras en el elemento */
+                inset 0 -4px 4px rgb(0, 0, 0, 0.1);
+    position: relative; /*Posicion relativa*/
+    border: none; /*Ningun borde*/
+    cursor: pointer; /*Un cursor encima*/
+    transition: 0.5s; /*Una transición de 0.5 segundos*/
+    appearance: none; /*Ninguna apariencia*/
+    border-radius: 160px; /*Bordes re4dondos*/
+    /*ESTILOS PARA CUANDO CAMBIE*/
+    &.toggleBlanco{
+        background-color: aliceblue;/*Color de Fondo*/
+        box-shadow: inset 0 2px 60px rgb(0, 0, 0, 0.1), /*Sombra en el elemento */
+                    inset 0 2px 8px rgb(0, 0, 0, 0.1), /*Multiples sombras en el elemento */
+                    inset 0 -4px 4px rgb(0, 0, 0, 0.05);
+        .circulo{
+            left: 160px;
+            box-shadow: 0 8px 40px rgb(0, 0, 0, 0.5),/*Una sombra*/
+                    inset 4px 4px rgba(255, 255, 255, 1), /*Sombras internas*/
+                    inset -4px 4px rgba(255, 255, 255, 1);
+            background: linear-gradient(to bottom, aliceblue, #fafafa);
+        }
+    }
+}
+
+/*ESTOLOS PARA DAR UN CIRCULO*/
+.circulo{
+    position: absolute; /*Una posición absoluta*/
+    top: 0;/*Separación en la altura de 0*/
+    left: 0;/*Separación en la izquierda de 0*/
+    width: 160px; /*Ancho*/
+    height: 160px; /*Altura*/
+    content: "";/*Sin contenido*/
+    background: linear-gradient(to bottom, #444, #222); /*Un contenido de color gradiente*/
+    border-radius: 50vh; /*Un borde redondo*/
+    transform: scale(0.9); /*Para que quede un poco mas adentro*/
+    transition: 0.5s; /*Un tiempo de transision*/
+    box-shadow: 0 8px 40px rgb(0, 0, 0, 0.5),/*Una sombra*/
+                inset 4px 4px rgba(255, 255, 255, 0.2), /*Sombras internas*/
+                inset 4px 4px rgba(255, 255, 255, 0.2);
+}
